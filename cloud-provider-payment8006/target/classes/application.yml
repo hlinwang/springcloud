@@ -1,0 +1,16 @@
+#8006表示注册到consul服务器的支付服务提供者端口号
+server:
+  port: 8006
+
+#服务别名----注册consule到注册中心名称
+spring:
+  application:
+    name: consul-provider-payment
+  cloud:
+    consul:
+      host: 192.168.193.121
+      port: 8500
+      discovery:
+        hostname: ${spring.application.name}
+        heartbeat:
+          enabled: true
